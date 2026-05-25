@@ -1,28 +1,44 @@
 // import React from 'react'
+import { Routes,Route } from "react-router-dom"
+import Manage from "./Manage"
+import View from "./View"
+// import { useLocation,useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
 
-function maincomponent(props) {
+  function Maincomponent({
+  taskName,
+  dueDate,
+  discription,
+  setTaskName,
+  setDueDate,
+  setDiscription,
+  addTask,
+  tasks
+}) 
+// const location = useLocation();
+//   const Navigate = useNavigate(); 
+  //  useEffect(() => {
+  //   if (location.pathname === "/") {
+  //     Navigate("/Manage");
+  //   }
+  // }, [location.pathname]);
+{
   return (
-  <div className="taskContainer">
-      <input
-        type="text"
-        placeholder="Enter task"
-        value={props.taskName}
-        onChange={(e) => props.setTaskName(e.target.value)}
-      />
-      <input 
-      type="date"
-      placeholder="Enter due date"
-      value= {props.dueDate}
-      onChange = {(e) => props.setDueDate(e.target.value)} />
-
-      <input 
-      type="text"
-      placeholder="Enter description"
-      value={props.discription}
-      onChange={(e) => props.setDiscription(e.target.value)} />
-      <button onClick={props.addTask}>Add</button>
-      </div>
+    <div className="mainComponent">
+    <Routes>
+    <Route path="/Manage" element={<Manage
+     taskName={taskName}
+ dueDate={dueDate}
+ discription={discription}
+ setTaskName={setTaskName}
+ setDueDate={setDueDate}
+ setDiscription={setDiscription}
+ addTask={addTask}
+    />}></Route>
+     <Route path="/View" element={<View  tasks={tasks}   />}></Route>
+  </Routes>
+  </div>
   )
 }
 
-export default maincomponent
+export default Maincomponent
