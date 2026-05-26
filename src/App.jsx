@@ -2,7 +2,7 @@ import { useState , useEffect} from "react";
 import Navbar from "./assets/Navbar";
 import Maincomponent from "./assets/Maincomponent";
 import { useLocation ,useNavigate} from "react-router-dom";
-import SideNavbar from "./assets/SideNavbar";
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -15,9 +15,9 @@ function App() {
  
    useEffect(() => {
     if (location.pathname === "/") {
-      navigate("/Active/Manage");
+      navigate("/Manage");
     }
-  }, [location.pathname]);
+  },);
 
 
   const addTask = () => {
@@ -37,7 +37,7 @@ createDate: new Date()
     setDueDate("");
     setDiscription("");
 
-    navigate("/Active/View");
+    navigate("/View/Active");
   };
 
  }
@@ -47,8 +47,8 @@ createDate: new Date()
     <div className="todoTaskContainer">
 
       <Navbar />
-           <div className="bodyContainer">
-             <SideNavbar />
+          
+           
       <Maincomponent
  taskName={taskName}
  dueDate={dueDate}
@@ -60,7 +60,7 @@ createDate: new Date()
  tasks={tasks}
 />  
 
-</div>
+
     </div>
   );
 }

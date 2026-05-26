@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom"
 function SideNavbar() {
     let navigate = useNavigate();
   return (
-    <div className="sideNavbar"> 
-   <ul className="sidenavbarList">
-    <li onClick={()=>navigate("/Active")}>Active</li>
-    <li onClick={()=>navigate("/Pending")}>Pending</li>
-    <li onClick={()=>navigate("/Done")}>Done</li>
-    <li onClick={()=>navigate("/OverDue")}>Over Due</li>
-    <li onClick={()=>navigate("/Backlog")}>Backlog</li>
-   </ul>
-    </div>
+      
+   <div className="sideNaveList">
+    <li onClick={()=>navigate("/View/Active")}>Active</li>
+    <li onClick={()=>navigate("/View/Pending")}>Pending</li>
+    <li onClick={()=>navigate("/View/Done")}>Done</li>
+    <li onClick={()=>navigate("/View/OverDue")}>Over Due</li>
+    <li onClick={()=>navigate("/View/Backlog")}>Backlog</li>
+        </div>
+    
   )
 }
 

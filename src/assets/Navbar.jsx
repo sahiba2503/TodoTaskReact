@@ -4,8 +4,8 @@ function Navbar() {
   let navigate = useNavigate();
   return (
     <nav className="navbar">
-        <button onClick={()=>navigate("Active/Manage")}>Manage</button>
-        <button onClick={()=>navigate("Active/View")}>View</button>
+        <button onClick={()=>navigate("/Manage")}>Manage</button>
+        <button onClick={()=>navigate("/View/Active")}>View</button>
       </nav>
   )
 }

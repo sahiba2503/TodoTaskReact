@@ -1,13 +1,9 @@
-import SideNavbar from "./SideNavbar"
-import ViewTasks from "./ViewTasks"
 
-function View({ tasks }) {
-    return (
-    <div className="viewTaskContainer">
-               <SideNavbar />
-               <ViewTasks tasks={tasks}/>
-        {/* <div className="tasksViewContainer">
-            {tasks.map((task, index) => (
+
+function ActiveTasks(props) {
+  return (
+     <div className="tasksViewContainer">
+            {props.tasks.map((task, index) => (
                 <div key={index} className="seperateTask">
                     <p> <strong>Task Name :</strong> {task.name}</p>
                     <p><strong>  DueDate :</strong> {task.dueDate}</p>
@@ -20,9 +16,8 @@ function View({ tasks }) {
                 </div>
 
             ))}
-        </div> */}
-        </div>
-    )
+        </div> 
+  )
 }
 
-export default View
+export default ActiveTasks
