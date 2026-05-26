@@ -1,9 +1,8 @@
 // import React from 'react'
-import { Routes,Route } from "react-router-dom"
+import { Routes,Route} from "react-router-dom"
 import Manage from "./Manage"
 import View from "./View"
-// import { useLocation,useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
+
 
   function Maincomponent({
   taskName,
@@ -15,18 +14,11 @@ import View from "./View"
   addTask,
   tasks
 }) 
-// const location = useLocation();
-//   const Navigate = useNavigate(); 
-  //  useEffect(() => {
-  //   if (location.pathname === "/") {
-  //     Navigate("/Manage");
-  //   }
-  // }, [location.pathname]);
 {
   return (
     <div className="mainComponent">
     <Routes>
-    <Route path="/Manage" element={<Manage
+    <Route path="/Active/Manage" element={<Manage
      taskName={taskName}
  dueDate={dueDate}
  discription={discription}
@@ -35,10 +27,12 @@ import View from "./View"
  setDiscription={setDiscription}
  addTask={addTask}
     />}></Route>
-     <Route path="/View" element={<View  tasks={tasks}   />}></Route>
+     <Route path="Active/View" element={<View  tasks={tasks}   />}></Route>
   </Routes>
   </div>
   )
 }
+
+
 
 export default Maincomponent
