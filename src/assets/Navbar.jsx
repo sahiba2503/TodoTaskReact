@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
         <button onClick={()=>navigate("/Manage")}>Manage</button>
-        <button onClick={()=>navigate("/View/Active")}>View</button>
+        <button onClick={()=>navigate("/View")}>View</button>
       </nav>
   )
 }
